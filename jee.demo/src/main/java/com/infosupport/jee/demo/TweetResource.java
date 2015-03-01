@@ -1,9 +1,6 @@
 package com.infosupport.jee.demo;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 
 @Path("/tweets")
 public class TweetResource {
@@ -18,5 +15,11 @@ public class TweetResource {
     @Produces("text/plain")
     public String getTweet(@PathParam("id") String id) {
         return "a tweet";
+    }
+    
+    @DELETE
+    @Path("{id}")
+    public void deleteTweet(@PathParam("id") String id) {
+        /* delete tweet with id */
     }
 }
